@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>index.html</h1>
+    <!-- 사용자에게 정보를 입력받을 때 form 태그 사용-->
+    <!-- action : 어떤 url을 요청할 지-->
+    <!-- create라는 name을 가진 url을 요청-->
+    <form action="{% url 'todos:create' %}">
+      <!-- back에서 models.py에 content 길이 제한을 설정했으니, front에서도 제한해야 함-->
+      <!-- 유효성 검사-->
+      <input type="text" name="content___" id="" maxlength="10" />
+      <input type="submit" value="할 일 추가" />
+    </form>
+    <hr />
+    <!-- {{ todos }} 리스트 형태이므로 for문으로 출력 -->
+    <!-- DTL for문 사용법-->
+    <ul>
+      {% for todo in todos %}
+      <li>{{ todo.id }} - {{ todo.content }} - {{ todo.completed }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
