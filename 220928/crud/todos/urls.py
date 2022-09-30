@@ -9,5 +9,7 @@ app_name = "todos"
 urlpatterns = [
     path("", views.index, name="index"),
     path("create/", views.create, name="create"),
+    path(
+        "delete/<int:todo_pk>", views.delete, name="delete"
+    ),  # 동적인자 int:와 같이 type은 필수로 지정 안해도 됨
 ]
-

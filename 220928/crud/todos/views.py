@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Todo
 
 # Create your views here.
@@ -24,7 +24,20 @@ def create(request):
     #     "todos": _todos,
     # }
 
-    return render(
-        request,
-        "todos/index.html",
-    )  # context를 create한 후 return할 때 인자로 불러와도 되긴 하나 redirect로 해보자
+    # context를 create한 후 return할 때 인자로 불러와도 되긴 하나 redirect로 해보자
+    return redirect("todos:index")  # runserver하면 루트 주소로 뜬다.
+    # 주소창에 naver를 navet로 입력해도 naver로 연결하는 역할
+
+
+def delete(request, todo_pk):
+    todo = Todo.objects.get(pk=todo_pk)
+    todo.delete()
+
+    return redirect("todos:index")
+
+    """
+    redirect
+    1. 사용자가 create 요청
+    2. 서버에서 index 요청
+    3. 사용자에게는 index 응답
+    """

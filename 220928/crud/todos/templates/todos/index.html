@@ -23,7 +23,10 @@
     <!-- DTL for문 사용법-->
     <ul>
       {% for todo in todos %}
-      <li>{{ todo.id }} - {{ todo.content }} - {{ todo.completed }}</li>
+      <li>
+        {{ todo.id }} - {{ todo.content }} - {{ todo.completed }}
+        <a href="{% url 'todos:delete' todo.pk %}">삭제</a>
+      </li>
       {% endfor %}
     </ul>
   </body>
