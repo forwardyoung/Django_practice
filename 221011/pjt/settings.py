@@ -57,7 +57,7 @@ ROOT_URLCONF = 'pjt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"], # 추가 
+        'DIRS': [BASE_DIR / "templates"], # 추가 DIR들을 템플릿으로 관리하겠다
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
