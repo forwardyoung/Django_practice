@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %} <!-- bootstrap 적용 -->
 
 {% block body %}
 <h1>회원가입</h1>
+<!--{{ form.as_p }} 폼의 각 필드를 p 태그 안에서 레이블과 텍스트로 배치-->
+<form action="" method="POST"> <!-- 내 정보를 DB에 저장 : method는 'POST' -->
+    {% csrf_token %} <!-- CSRF (Cross Site Request Forgeries)는 웹 해킹 기법의 하나로 Django는 이를 방지하기 위한 기능을 기본적으로 제공. Django에서 HTTP POST, PUT, DELETE을 할 경우 이 태그를 넣어 주어야 한다.-->
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="OK" %}
+</form>
 
 {% endblock body %}
