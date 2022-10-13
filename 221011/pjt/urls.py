@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views # 이 코드가 없으면 NameError: name 'views' is not defined 에러 발생
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'), # 메인 화면
     path('accounts/', include('accounts.urls')), # accounts앱의 urls.py
 ]
 # NameError: name 'include' is not defined => import include
