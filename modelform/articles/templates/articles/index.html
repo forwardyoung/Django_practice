@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>밀도 있는 취향 셀렉트샵</h1>
-    <img src="{% static '19cm.png' %}" alt="">
+    
     <a href="{% url 'articles:create' %}">글쓰기</a>
     {% for article in articles %}
         <h3><a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></h3>
