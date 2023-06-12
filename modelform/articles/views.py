@@ -42,7 +42,7 @@ def create(request):
     }
     return render(request, 'articles/new.html', context=context)
 
-def detail(request, pk):
+def detail(request, pk):    
     # 특정 글을 가져온다.
     article = Article.objects.get(pk=pk)
     # template에 객체 전달
@@ -66,3 +66,8 @@ def update(request, pk):
         'article_form': article_form
     }
     return render(request, 'articles/update.html', context)
+
+def delete(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.delete()
+    return redirect('articles:index')

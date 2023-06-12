@@ -14,3 +14,4 @@ class Article(models.Model):
     content= models.TextField()
     created_at = models.DateTimeField(auto_now_add=True) # 추가될 때 자동으로 기록
     updated_at = models.DateTimeField(auto_now=True) # 자동으로 기록
+    image = models.ImageField(upload_to='images/', blank=True) # 실제 이미지가 저장되는 경로를 지정하고, 이미지 필드에 빈 값 허용

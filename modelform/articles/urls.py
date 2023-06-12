@@ -19,4 +19,5 @@ urlpatterns = [
     # http://127.0.0.1:8000/articles/1/update/ : 1번글
     # http://127.0.0.1:8000/articles/3/update/ : 3번글
     path('<int:pk>/update/', views.update, name='update'),
+    path('<int:pk>/delete/', views.delete, name='delete'),
 ]

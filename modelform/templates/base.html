@@ -7,16 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>19cm</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
 </head>
 <body>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
-    <nav class="navbar navbar-expand-lg border-bottom  justify-content-between">
-        <div class="container-fluid">
-            <a class="navbar-brand " href="#">
-                <img src="{% static 'logo.jpg' %}" alt="">
-            </a>
+    <nav class="navbar navbar-expand-lg sticky-top bg-white border border-end">
+        <div class="container-fluid"> <!-- 좌우 여백 X -->
+            <a class="navbar-brand " href="#"><img src="{% static 'logo.jpg' %}" alt=""></a>
+            <div class="justify-content-end" id="navbarNav">
+                <ul class="d-flex flex-row navbar-nav"> <!-- d-flex: 한 row를 block 형태로 차지-->
+                    <li class="mx-2 nav-item">
+                        <a style="text-decoration:none; color:black; font-weight:bolder" aria-current="page" href="https://www.naver.com/">
+                            <i class="material-icons">person
+                                <span style="font-size:large; font-weight:bold">MY PAGE</span>
+                            </i>
+                        </a>
+                        
+                    </li>
+                    <li class="mx-2 nav-item">
+                        <a style="text-decoration:none; color:black; font-weight:bolder" aria-current="page" href="#"><i class="material-icons">login</i>JOIN</a>
+                    </li>
+                </ul>
     </nav>
     
 </body>
